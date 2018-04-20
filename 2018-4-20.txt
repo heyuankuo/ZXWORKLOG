@@ -1,0 +1,8 @@
+
+MFC 嵌入CEF-------------------------------------------------------完成
+https://blog.csdn.net/blackwoodcliff/article/details/74276848
+https://www.cnblogs.com/wlreg/p/4595248.html
+
+cef 离屏渲染------------------------------------------------------未完成
+https://blog.csdn.net/u012814856/article/details/77120731
+https://github.com/fanfeilong/cefutil/blob/master/doc/CEF%20General%20Usage-zh-cn.md#off-screen-rendering
