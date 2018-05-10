@@ -13,9 +13,15 @@ C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\
 
 python src\align\align_dataset_mtcnn.py data/lfw/raw data/lfw/lfw_160 --image_size 160 --margin 32 --random_order --gpu_memory_fraction 0.25 
 
-python src\validate_on_lfw.py data\lfw\lfw_160 src\models\20170512-110547
+python src\validate_on_lfw.py data\lfw\lfw_160 src\models\20180408-102900
+python src\compare.py src\models\20170512-110547 
 
 tensorflow.python.framework.errors_impl.InvalidArgumentError: Input 0 of node cross_entropy_per_example/Shape was passed int32 from batch_join:1 incompatible with expected int64.
+
+python src\compare.py src\models\20180402-114759 .\data\images\Anthony_Hopkins_0001.jpg .\data\images\Anthony_Hopkins_0002.jpg
+
+tensorflow 入门示例
+https://blog.csdn.net/dabokele/article/details/54293560
 
 
 D3D11 hook----------------------未完成
