@@ -1,0 +1,33 @@
+
+
+测试一下IAT是否为永久修改PE文件-完成
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin>dumpbin.exe -imports
+E:\workspace\CEFTest\CefTest_1\x64\Debug\windtemple.exe
+
+win32 异形窗口
+https://www.cnblogs.com/lidabo/p/3437715.html
+
+
+
+D3D11 hook ---------------------未完成
+win32 hook----------------------未完成
+https://www.cnblogs.com/17bdw/p/6533065.html
+
+
+动态视角绑定--------------------未完成
+
+使用D3D11 完成离屏渲染绘制------未完成
+先使用GDI方法尝试一下-----------未完成
+
+计算方向向量--------------------未完成
+step
+
+
+
+看一下纹理如何绑定到渲染管线的--完成
+
+DX11 hook
+https://bbs.csdn.net/topics/392267542
+
+显卡驱动入手的构造D3DHook的方法
+https://blog.csdn.net/YuHengZuo/article/details/79402596

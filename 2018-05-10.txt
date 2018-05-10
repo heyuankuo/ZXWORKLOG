@@ -1,0 +1,43 @@
+
+FaceNet 模型下载
+https://blog.csdn.net/u013044310/article/details/79556099
+
+FaceNet 测试
+https://blog.csdn.net/qq_15192373/article/details/78693037
+
+tensorflow 重装
+https://www.cnblogs.com/willnote/p/6746499.html
+https://blog.csdn.net/hua18513115569/article/details/78409245
+
+C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\site-packages\facenet
+
+python src\align\align_dataset_mtcnn.py data/lfw/raw data/lfw/lfw_160 --image_size 160 --margin 32 --random_order --gpu_memory_fraction 0.25 
+
+python src\validate_on_lfw.py data\lfw\lfw_160 src\models\20170512-110547
+
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Input 0 of node cross_entropy_per_example/Shape was passed int32 from batch_join:1 incompatible with expected int64.
+
+
+D3D11 hook----------------------未完成
+win32 hook----------------------未完成
+https://www.cnblogs.com/17bdw/p/6533065.html
+
+
+动态视角绑定--------------------未完成
+使用
+
+使用D3D11 完成离屏渲染绘制------未完成
+先使用GDI方法尝试一下-----------未完成
+
+计算方向向量--------------------未完成
+step
+
+
+
+看一下纹理如何绑定到渲染管线的--完成
+
+DX11 hook
+https://bbs.csdn.net/topics/392267542
+
+显卡驱动入手的构造D3DHook的方法
+https://blog.csdn.net/YuHengZuo/article/details/79402596

@@ -1,0 +1,12 @@
+cef 离屏渲染------------------------------------------------------未完成
+https://blog.csdn.net/u012814856/article/details/77120731
+https://github.com/fanfeilong/cefutil/blob/master/doc/CEF%20General%20Usage-zh-cn.md#off-screen-rendering
+
+实现CefRenderHandler中的接口--------------------------------------未完成
+获取目标窗口的位置信息--------------------------------------------未完成
+关闭所有进程------------------------------------------------------未完成
+
+
+JS回调-------------------------------------完成
+https://github.com/fanfeilong/cefutil/blob/master/doc/CEF_JavaScript_Cpp.md
+创建一个窗口类----------------------------------------------------完成
