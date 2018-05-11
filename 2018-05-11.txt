@@ -1,0 +1,79 @@
+
+获取windows 版本信息
+https://blog.csdn.net/clever101/article/details/43987527
+WIN32 HOOK
+https://blog.csdn.net/zuishikonghuan/article/details/47976067
+
+桌面图标
+https://blog.csdn.net/shyboy_nwpu/article/details/4276037
+
+测试一下性能--------------------未完成
+
+D3D11 hook----------------------未完成
+win32 hook----------------------未完成
+https://www.cnblogs.com/17bdw/p/6533065.html
+
+
+动态视角绑定--------------------未完成
+使用
+
+使用D3D11 完成离屏渲染绘制------未完成
+先使用GDI方法尝试一下-----------未完成
+
+计算方向向量--------------------未完成
+step
+
+
+
+看一下纹理如何绑定到渲染管线的--完成
+
+DX11 hook
+https://bbs.csdn.net/topics/392267542
+
+显卡驱动入手的构造D3DHook的方法
+https://blog.csdn.net/YuHengZuo/article/details/79402596
+
+tensorflow 可视化工具
+https://www.cnblogs.com/adong7639/p/7815083.html
+
+//参数：目标进程ID、DLL路径
+BOOL InjectDll(DWORD dwProcessID, char* dllPath)
+{
+	FARPROC FuncAddr = NULL;
+	HMODULE hdll = LoadLibrary(TEXT("Kernel32.dll"));//加载DLL
+	if (hdll != NULL) 
+	{
+		FuncAddr = GetProcAddress(hdll, "LoadLibraryA");//获取LoadLibraryA函数地址
+		if (FuncAddr == NULL)
+			return FALSE;
+	}
+
+	HANDLE hProcess = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_VM_READ | PROCESS_CREATE_THREAD | PROCESS_VM_OPERATION, FALSE, dwProcessID);//获取进程句柄
+	if (hProcess == NULL)return FALSE;
+	DWORD dwSize = strlen(dllPath) + 1;
+	LPVOID RemoteBuf = VirtualAllocEx(hProcess, NULL, dwSize, MEM_COMMIT, PAGE_READWRITE);//远程申请内存
+	DWORD dwRealSize;
+	if (WriteProcessMemory(hProcess, RemoteBuf, dllPath, dwSize, &dwRealSize))//远程写内存
+	{
+		DWORD dwThreadId;
+		HANDLE hRemoteThread = CreateRemoteThread(hProcess, 0, 0, (LPTHREAD_START_ROUTINE)FuncAddr, RemoteBuf, 0, &dwThreadId);//创建远程线程
+		if (hRemoteThread == NULL)
+		{
+			VirtualFreeEx(hProcess, RemoteBuf, dwSize, MEM_COMMIT);
+			CloseHandle(hProcess);
+			return FALSE;
+		}
+		//释放资源
+		WaitForSingleObject(hRemoteThread, INFINITE);
+		CloseHandle(hRemoteThread);
+		VirtualFreeEx(hProcess, RemoteBuf, dwSize, MEM_COMMIT);
+		CloseHandle(hProcess);
+		return TRUE;
+	}
+	else
+	{
+		VirtualFreeEx(hProcess, RemoteBuf, dwSize, MEM_COMMIT);
+		CloseHandle(hProcess);
+		return FALSE;
+	}
+}

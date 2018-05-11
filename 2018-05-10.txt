@@ -18,7 +18,7 @@ python src\compare.py src\models\20170512-110547
 
 tensorflow.python.framework.errors_impl.InvalidArgumentError: Input 0 of node cross_entropy_per_example/Shape was passed int32 from batch_join:1 incompatible with expected int64.
 
-python src\compare.py src\models\20180402-114759 .\data\images\Anthony_Hopkins_0001.jpg .\data\images\Anthony_Hopkins_0002.jpg
+python src\compare.py src\models\20170512-110547 .\data\images\IMG_1.jpg .\data\images\IMG_2.jpg
 
 tensorflow 入门示例
 https://blog.csdn.net/dabokele/article/details/54293560
