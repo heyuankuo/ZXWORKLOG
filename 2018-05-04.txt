@@ -19,3 +19,8 @@ http://www.cnblogs.com/zhangbaochong/category/780451.html
 
 DX11 hook
 https://bbs.csdn.net/topics/392267542
+
+p_d2dobj = new DemoApp(hwnd_pop);
+	p_d2dobj->Initialize();
+	L"Texture\\images\\1.png"
+	HRESULT hr = CreateDeviceResources();

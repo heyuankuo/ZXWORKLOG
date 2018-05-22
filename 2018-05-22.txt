@@ -1,0 +1,49 @@
+最大化位置调整----------------------------------完成
+
+添加游戏关闭处理--------------------------------未完成
+视口大小调整------------------------------------完成
+视角大小调整------------------------------------完成
+WIC组件引入-------------------------------------完成
+
+DS资料------------------------------------------未完成
+https://blog.csdn.net/marising/article/details/52143553
+https://blog.csdn.net/shaqoneal/article/details/19162245
+游戏服务器向客户端发送请求应答------------------未完成
+
+IGraphBuilder *pGraph = NULL;	//FGM的接口之一，IGraphBuilder继承自IFilterGraph。IFilterGraph提供了将filter加入graph，连接/断开filters，删除filter等其他基本操作。
+	//IGraphBuilder则可以依据部分信息建立整个Filter Graph
+	IMediaControl *pControl = NULL;	//FGM的接口之一。IMediaControl控制Filter Graph中的数据流，包含Run,Stop,Paused方法。
+	IMediaEvent   *pEvent = NULL;	//FGM的接口之一。包含检索事件通知的方法，和重写FGM的默认事件处理函数。
+	DWORD dwGraphRegister;
+
+	// Initialize the COM library.
+	HRESULT hr = CoInitialize(NULL);//在当前线程中初始化COM库。
+	if (FAILED(hr))
+	{
+		printf("ERROR - Could not initialize COM library");
+		return 0;
+	}
+
+	// Create the filter graph manager and query for interfaces.
+	// 建立一个未经初始化的类实例，与某一CLSID相联系
+	// 建立Filter Graph Manager对象，对象指针为pGraph。
+	hr = CoCreateInstance(CLSID_FilterGraph,		//class identifier is CLSID_FilterGraph
+		NULL,					//object is not being created as part of an aggregate
+		CLSCTX_INPROC_SERVER,	//The Filter Graph Manager is provided by an in-process DLL, so the execution context is CLSCTX_INPROC_SERVER. 
+		IID_IGraphBuilder,		//interface ID,类名的识别码——A reference to the identifier of the interface .
+		(void **)&pGraph);		//输出指针，指向由上一个参数规定的对象。
+	
+	hr = AddToRot(pGraph,&dwGraphRegister);
+
+// 	//向Filter Graph中添加filter
+ 	IBaseFilter *pLavSplitterSource, *pFileSourceFilter;
+ 
+ 	hr = AddFilterByCLSID(pGraph,CLSID_LavSplitter_Source,L"Lav Splitter Source",&pLavSplitterSource);
+
+	while (1)
+	{
+	}
+
+	RemoveFromRot(dwGraphRegister);
+	pGraph->Release();
+	return 1;
