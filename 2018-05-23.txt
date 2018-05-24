@@ -1,0 +1,26 @@
+
+手动实现一下整个逻辑----------------------------未完成
+http://lengbingteng.iteye.com/blog/1757540
+先不管图片大小
+
+重新测试一下子窗体模式--------------------------未完成
+
+游戏服务器向客户端发送请求应答------------------未完成
+添加游戏关闭处理--------------------------------未完成
+
+
+测试一下D3D png 纹理----------------------------完成
+CreateWICTextureFromFile调通--------------------完成
+SDK 8.1 不支持
+最大化位置调整----------------------------------完成
+DS资料------------------------------------------完成
+https://blog.csdn.net/marising/article/details/52143553
+https://blog.csdn.net/shaqoneal/article/details/19162245
+
+https://github.com/heyuankuo/opencvtest.git
+
+_countof宏解析
+https://blog.csdn.net/hanzz2007/article/details/6667209
+
+
+WICBitsPerPixel
