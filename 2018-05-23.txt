@@ -24,3 +24,8 @@ https://blog.csdn.net/hanzz2007/article/details/6667209
 
 
 WICBitsPerPixel
+
+解决帧率问题------------------------未完成
+
+封装视频文件------------------------未完成
+https://blog.csdn.net/cfqcfqcfqcfqcfq/article/details/68496213
