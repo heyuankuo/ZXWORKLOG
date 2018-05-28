@@ -1,0 +1,43 @@
+
+
+
+编码YUV视频流为MP4-----------------------------------未完成
+https://blog.csdn.net/u012478275/article/details/52473354
+https://blog.csdn.net/iloveyouleehuijie/article/details/72676898
+
+修改编码函数------------------------------------未完成
+重新测试一下子窗体模式--------------------------未完成
+
+
+添加游戏关闭处理--------------------------------未完成
+
+
+// 编码方式
+
+解决帧率问题------------------------未完成
+
+游戏服务器向客户端发送请求应答------------------完成
+
+cmd 查找指定进程并执行相应动作
+http://www.jb51.net/article/33212.htm
+
+yuv 视频下载
+http://trace.eas.asu.edu/yuv/
+
+avstream::codec 被声明为已否决
+https://blog.csdn.net/jacke121/article/details/79290524
+
+if ((ret = av_bsf_receive_packet(ctx, pkt)) < 0) {
+                if (ret == AVERROR(EAGAIN) || ret == AVERROR_EOF)
+                    return 0;
+                av_log(ctx, AV_LOG_ERROR,
+                       "Failed to send packet to filter %s for stream %d",
+                       ctx->filter->name, pkt->stream_index);
+                goto fail;
+            }
+            if (i == st->internal->nb_bsfcs - 1) {
+                if (ctx->par_out->extradata_size != st->codecpar->extradata_size) {
+                    if ((ret = avcodec_parameters_copy(st->codecpar, ctx->par_out)) < 0)
+                        goto fail;
+                }
+            }
